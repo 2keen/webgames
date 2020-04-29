@@ -10,7 +10,7 @@ var context = document.getElementById("myCanvas").getContext("2d");
 
 var player = new Player(160, 160);
 player.symbol = 'br';
-player.speed = 2;
+player.speed = 10;
 player.update = function(scale, logic_grid) {
     if (Keyboard.isDown(Keyboard.LEFT)) {this.x -= this.speed;}
     if (Keyboard.isDown(Keyboard.RIGHT)) {this.x += this.speed;}
@@ -27,9 +27,9 @@ player.update = function(scale, logic_grid) {
         let y_prt = scale - (this.y % scale);
         if (x_prt < scale/2 || y_prt < scale/2) {
             if (x_prt < y_prt) {
-                player.x += x_prt+1;
+                player.x += x_prt;
             } else {
-                player.y += y_prt+1;
+                player.y += y_prt;
             } 
         }
     } 
@@ -39,9 +39,9 @@ player.update = function(scale, logic_grid) {
         let y_prt = scale - (this.y % scale);
         if (x_prt < scale/2 || y_prt < scale/2) {
             if (x_prt < y_prt) {
-                player.x -= x_prt+1;
+                player.x -= x_prt;
             } else {
-                player.y += y_prt+1;
+                player.y += y_prt;
             } 
         }
     }
@@ -52,9 +52,9 @@ player.update = function(scale, logic_grid) {
         let y_prt = (this.y % scale);
         if (x_prt < scale/2 || y_prt < scale/2) {
             if (x_prt < y_prt) {
-                player.x += x_prt+1;
+                player.x += x_prt;
             } else {
-                player.y -= y_prt+1;
+                player.y -= y_prt;
             } 
         }
     }
@@ -65,9 +65,9 @@ player.update = function(scale, logic_grid) {
         let y_prt = (this.y % scale);
         if (x_prt < scale/2 || y_prt < scale/2) {
             if (x_prt < y_prt) {
-                player.x -= x_prt+1;
+                player.x -= x_prt;
             } else {
-                player.y -= y_prt+1;
+                player.y -= y_prt;
             } 
         }
     }
